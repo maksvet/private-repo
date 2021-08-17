@@ -4,7 +4,9 @@ import React from 'react';
 class AR extends React.Component {
     render() {
         return (
-
+         
+        <>
+          
           <a-scene
             vr-mode-ui="enabled: false;"
             renderer="logarithmicDepthBuffer: true;"
@@ -13,7 +15,7 @@ class AR extends React.Component {
           >
             <a-nft
               markerhandler
-              name = "blue-paint"
+              name = "/map"
               type="nft"
               url="NFTs/blue-painting"
             >
@@ -21,7 +23,7 @@ class AR extends React.Component {
 
             <a-nft
               markerhandler
-              name = "trex"
+              name = "/arvr"
               type="nft"
               url="NFTs/trex-image-big"
             >
@@ -29,13 +31,15 @@ class AR extends React.Component {
             
             <a-nft
               markerhandler
-              name="disc"
+              name="/languages"
               type="nft"
               url="NFTs/download"
             >
             </a-nft>
             <a-entity camera></a-entity>
           </a-scene>
+          
+        </>
         );
     }
 }

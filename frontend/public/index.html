@@ -12,13 +12,16 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!-- Links to A-frame and AR.js -->
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+     <!-- event listener for NFT image marker found event -->
      <script>
       AFRAME.registerComponent('markerhandler', {
 		init: function () {
 			var marker = this.el;
 
 			marker.addEventListener('markerFound', function() {
-				alert(marker.getAttribute('name'));
+        // marker attribute (name, id, etc.) could be used for any additional content
+				const url = marker.getAttribute('name')
+        window.open(url,'popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')
 			});
 		}
 	});
@@ -46,6 +49,9 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="modal-root">
+
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
